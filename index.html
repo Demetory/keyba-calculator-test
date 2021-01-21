@@ -1,0 +1,165 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!--
+           design the planet
+
+          _/_/_/_/_/_/  
+         _/_/      _/_/  
+        _/_/        _/_/   
+       _/_/      _/_/_/  
+      _/_/        _/_/   
+     _/_/      _/_/    _/_/
+    _/_/_/_/_/_/      _/_/
+
+    demetrey.ru     (o )( o)
+                       
+    //-->
+    <title>Demetory &mdash; Test Task 4 Keyba</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#408c71">
+    <meta name="description" content="Тестовое задание для Keyba">
+
+    <meta name="msapplication-config" content="favicon/browserconfig.xml">
+    <link rel="manifest" href="favicon/manifest.json">
+    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="mask-icon" type="image/svg" color="#3fba84" href="favicon/safari-pinned-tab.svg">
+    <link rel="shortcut icon" type="image/ico" sizes="16x16" href="favicon/favicon.ico">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="css/reboot.css">
+    <link rel="stylesheet" href="css/main.css?v=3">
+</head>
+<body>
+
+    <!--noindex-->
+    <noscript class="fatal splash">
+        <img alt="JavaScript должен быть включен" src="img/img_error.svg" />
+        <div>
+            <h1>Кажется, что-то пошло не так</h1>
+            <p>JavaScript должен быть включен.</p>
+        </div>
+    </noscript>
+    <!--/noindex-->
+
+    <section id="calculator">
+        <div class="calc__body">
+            <div class="calc__body-l">
+                <div class="calc__window">
+                    <div class="calc__window-img">
+                        <div class="calc__window-col calc__window-left">
+                            <span class="calc__window-button">1</span>
+                        </div>
+                        <div class="calc__window-col calc__window-right">
+                            <span class="calc__window-button">2</span>
+                            <img alt="" src="img/window-right-blind.png">
+                        </div>
+                    </div>
+                    <div class="calc__window-height"><p><span>1750 мм</span></p></div>
+                    <div class="calc__window-width"><p><span>1300 мм</span></p></div>
+                </div><!-- .calc__window //-->
+                <div class="calc__params">
+                    <div class="calc__params-row">
+                        <span class="calc__window-button">1</span>
+                        <ul class="calc__dropdown calc__dropdown-short">
+                            <li>Глухое <span class="calc__dropdown-arrow"><img alt="" src="img/dropdown-arrow-down.png"></span>
+                                <ul>
+                                    <li>Поворотное</li>
+                                    <li>Откидное</li>
+                                    <li>Поворотно-откидное</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div><!-- .calc__params-row //-->
+                    <div class="calc__params-row">
+                        <span class="calc__window-button">2</span>
+                        <ul class="calc__dropdown calc__dropdown-short">
+                            <li>Глухое <span class="calc__dropdown-arrow"><img alt="" src="img/dropdown-arrow-down.png"></span>
+                                <ul>
+                                    <li>Поворотное</li>
+                                    <li>Откидное</li>
+                                    <li>Поворотно-откидное</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div><!-- .calc__params-row //-->
+                    <div class="calc__params-row">
+                        <p class="calc__params-mosquito">
+                            <label class="checkbox">Добавить москитную сетку
+                                <input type="checkbox" />
+                                <span class="checkmark"></span>
+                            </label>
+                        </p>
+                    </div><!-- .calc__params-row //-->
+                </div><!-- .calc__params //-->
+            </div><!-- .calc__body-l //-->
+            <div class="calc__body-r">
+                <h2 class="calc__title">Укажите параметры</h2>
+                <div class="calc__params-row">
+                    <div class="calc__params-col">
+                        <label class="calc__input-label" for="param-width">Ширина, мм</label>
+                        <input type="text" class="calc__input" id="param-width" name="param-width" value="1300" />
+                    </div>
+                    <div class="calc__params-col">
+                        <label class="calc__input-label" for="param-height">Длина, мм</label>
+                        <input type="text" class="calc__input" id="param-height" name="param-height" value="1750" />
+                    </div>
+                </div><!-- .calc__params-row //-->
+                <div class="calc__params-row">
+                    <p class="calc__input-label">ПВХ-профиль</p>
+                    <ul class="calc__dropdown">
+                        <li>Eco 60 <span class="calc__dropdown-arrow"><img alt="" src="img/dropdown-arrow-down.png"></span>
+                            <ul>
+                                <li>Eco 60</li>
+                                <li>Баутек НЕО</li>
+                                <li>Спейс</li>
+                                <li>Эфорте</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- .calc__params-row //-->
+                <div class="calc__params-row">
+                    <p class="calc__input-label">Стеклопакет</p>
+                    <ul class="calc__dropdown">
+                        <li>Не выбран <span class="calc__dropdown-arrow"><img alt="" src="img/dropdown-arrow-down.png"></span>
+                            <ul>
+                                <li>Двухкамерный</li>
+                                <li>Однокамерный энергосберегающий стеклопакет</li>
+                                <li>Однокамерный стеклопакет с использованием триплекса</li>
+                                <li>Антирезонансный шумозащитный стеклопакет</li>
+                                <li>Двухкамерный энергосберегающий стеклопакет</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- .calc__params-row //-->
+                <div class="calc__params-row">
+                    <p class="calc__input-label">Цвет</p>
+                    <ul class="calc__dropdown">
+                        <li><span class="calc__dropdown-icon"><img alt="" src="img/dropdown-point-white.png"></span>Белый <span class="calc__dropdown-arrow"><img alt="" src="img/dropdown-arrow-down.png"></span>
+                            <ul>
+                                <li><span class="calc__dropdown-icon"><img alt="" src="img/dropdown-point-color.png"></span>C ламинацией</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- .calc__params-row //-->
+                <div class="calc__params-row">
+                    <p class="calc__params-price">Цена* &mdash; от <span>50 190 ₽</span></p>
+                </div><!-- .calc__params-row //-->
+                <div class="calc__params-row">
+                    <button class="calc__button">Добавить в корзину</button>
+                </div><!-- .calc__params-row //-->
+            </div><!-- .calc__body-r //-->
+        </div><!-- .calc__body //-->
+        <div class="calc__foot">
+            <p>* Цены в настоящем калькуляторе указана ориентировочная стоимость конструкций. Точный расчёт может быть проведен только с участием нашего инженера-замерщика.</p>
+            <p>* Цены на учитывают текущие скидки и акции. Звоните для полного расчёта в наш колл-центр!</p>
+        </div><!-- .calc__foot //-->
+    </section><!-- #calculator //-->
+
+</body>
+</html>
