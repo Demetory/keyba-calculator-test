@@ -34,6 +34,8 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="css/reboot.css">
     <link rel="stylesheet" href="css/main.css?v=3">
+
+    <script src="https://unpkg.com/vue@next"></script>
 </head>
 <body>
 
@@ -99,7 +101,7 @@
                 </div><!-- .calc__params //-->
             </div><!-- .calc__body-l //-->
             <div class="calc__body-r">
-                <h2 class="calc__title">Укажите параметры</h2>
+                <h2 class="calc__title">{{ text.title }}</h2>
                 <div class="calc__params-row">
                     <div class="calc__params-col">
                         <label class="calc__input-label" for="param-width">Ширина, мм</label>
@@ -148,18 +150,44 @@
                     </ul>
                 </div><!-- .calc__params-row //-->
                 <div class="calc__params-row">
-                    <p class="calc__params-price">Цена* &mdash; от <span>50 190 ₽</span></p>
+                    <p class="calc__params-price">{{ text.price }} <span>50 190 ₽</span></p>
                 </div><!-- .calc__params-row //-->
                 <div class="calc__params-row">
-                    <button class="calc__button">Добавить в корзину</button>
+                    <button class="calc__button">{{ text.cart }}</button>
                 </div><!-- .calc__params-row //-->
             </div><!-- .calc__body-r //-->
         </div><!-- .calc__body //-->
         <div class="calc__foot">
-            <p>* Цены в настоящем калькуляторе указана ориентировочная стоимость конструкций. Точный расчёт может быть проведен только с участием нашего инженера-замерщика.</p>
-            <p>* Цены на учитывают текущие скидки и акции. Звоните для полного расчёта в наш колл-центр!</p>
+            <p v-for = "footer in text.footer" :key="footer.id">{{ footer }}</p>
         </div><!-- .calc__foot //-->
     </section><!-- #calculator //-->
+
+
+<script>
+Promise
+    .all(['/options.json'].map(url => fetch(url)))
+    .then(responses => 
+        Promise
+            .all(responses.map(res => res.json()))
+            .then(objects => {
+                const staticData = {
+                    text: objects[0].text,
+                    params: objects[0].params
+                }
+
+                console.log(staticData.params);
+
+                const app = Vue.createApp({
+                    data() {
+                        return staticData
+                    }
+                })
+
+                app.mount('#calculator');
+            })
+    )
+    .catch(error => console.log("Ошибка JSON: " + error));
+</script>
 
 </body>
 </html>
