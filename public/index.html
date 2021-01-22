@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!--
+           design the planet
+
+          _/_/_/_/_/_/  
+         _/_/      _/_/  
+        _/_/        _/_/   
+       _/_/      _/_/_/  
+      _/_/        _/_/   
+     _/_/      _/_/    _/_/
+    _/_/_/_/_/_/      _/_/
+
+    demetrey.ru     (o )( o)
+                       
+    //-->
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#408c71">
+    <meta name="description" content="Тестовое задание для Keyba">
+
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="favicon/apple-touch-icon.png">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="<%= BASE_URL %>reboot.css">
+</head>
+<body>
+    <!--noindex-->
+    <noscript class="fatal splash">
+        <img alt="JavaScript должен быть включен" src="<%= BASE_URL %>img_error.svg" />
+        <div>
+            <h1>Кажется, что-то пошло не так</h1>
+            <p>JavaScript должен быть включен.</p>
+        </div>
+    </noscript>
+    <!--/noindex-->
+
+    <div id="calculator"></div>
+
+</body>
+<style>
+html { min-height: 100%; }
+body { padding: 40px; min-width: 370px; font-family: 'Roboto', sans-serif; background-color: #fff; text-align: center; }
+
+noscript.fatal { display: flex; z-index: 9999999; }
+.splash { width: 100%; height: 100%; position: fixed; display: none; align-items: center; justify-content: center; z-index: 999999; background-color: rgba(255,255,255, .95); }
+
+.fatal { display: none; }
+.fatal img { height: 100px; margin: 0 10px 0 20px; }
+.fatal div { margin: 0 20px 0 10px; display: flex; flex-direction: column; }
+.fatal div h1 { margin: 0; font-size: 2em; font-weight: 700; color: #00a6da; }
+.fatal div p { margin: 8px 0; font-size: 1.1em; color: #161616; }
+
+@media screen and (max-width: 800px){
+    .fatal { flex-direction: column; }
+    .fatal img { height: 120px; }
+}
+</style>
+</html>

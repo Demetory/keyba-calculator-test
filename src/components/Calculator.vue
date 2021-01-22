@@ -1,0 +1,204 @@
+<template>
+    <div class="calc__body">
+        <div class="calc__body-l">
+            <div class="calc__window">
+                <div class="calc__window-img">
+                    <div class="calc__window-col calc__window-left">
+                        <span class="calc__window-button">1</span>
+                    </div>
+                    <div class="calc__window-col calc__window-right">
+                        <span class="calc__window-button">2</span>
+                        <img alt="" src="../assets/window-right-blind.png">
+                    </div>
+                </div>
+                <div class="calc__window-height"><p><span>1750 мм</span></p></div>
+                <div class="calc__window-width"><p><span>1300 мм</span></p></div>
+            </div><!-- .calc__window //-->
+            <div class="calc__params">
+                <div class="calc__params-row">
+                    <span class="calc__window-button">1</span>
+                    <ul class="calc__dropdown calc__dropdown-short">
+                        <li>Глухое <span class="calc__dropdown-arrow"><img alt="" src="../assets/dropdown-arrow-down.png"></span>
+                            <ul>
+                                <li>Поворотное</li>
+                                <li>Откидное</li>
+                                <li>Поворотно-откидное</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- .calc__params-row //-->
+                <div class="calc__params-row">
+                    <span class="calc__window-button">2</span>
+                    <ul class="calc__dropdown calc__dropdown-short">
+                        <li>Глухое <span class="calc__dropdown-arrow"><img alt="" src="../assets/dropdown-arrow-down.png"></span>
+                            <ul>
+                                <li>Поворотное</li>
+                                <li>Откидное</li>
+                                <li>Поворотно-откидное</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!-- .calc__params-row //-->
+                <div class="calc__params-row">
+                    <p class="calc__params-mosquito">
+                        <label class="checkbox">Добавить москитную сетку
+                            <input type="checkbox" />
+                            <span class="checkmark"></span>
+                        </label>
+                    </p>
+                </div><!-- .calc__params-row //-->
+            </div><!-- .calc__params //-->
+        </div><!-- .calc__body-l //-->
+        <div class="calc__body-r">
+            <h2 class="calc__title">Укажите параметры</h2>
+            <div class="calc__params-row">
+                <div class="calc__params-col">
+                    <label class="calc__input-label" for="param-width">Ширина, мм</label>
+                    <input type="text" class="calc__input" id="param-width" name="param-width" value="1300" />
+                </div>
+                <div class="calc__params-col">
+                    <label class="calc__input-label" for="param-height">Длина, мм</label>
+                    <input type="text" class="calc__input" id="param-height" name="param-height" value="1750" />
+                </div>
+            </div><!-- .calc__params-row //-->
+            <div class="calc__params-row">
+                <p class="calc__input-label">ПВХ-профиль</p>
+                <ul class="calc__dropdown">
+                    <li>Eco 60 <span class="calc__dropdown-arrow"><img alt="" src="../assets/dropdown-arrow-down.png"></span>
+                        <ul>
+                            <li>Eco 60</li>
+                            <li>Баутек НЕО</li>
+                            <li>Спейс</li>
+                            <li>Эфорте</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- .calc__params-row //-->
+            <div class="calc__params-row">
+                <p class="calc__input-label">Стеклопакет</p>
+                <ul class="calc__dropdown">
+                    <li>Не выбран <span class="calc__dropdown-arrow"><img alt="" src="../assets/dropdown-arrow-down.png"></span>
+                        <ul>
+                            <li>Двухкамерный</li>
+                            <li>Однокамерный энергосберегающий стеклопакет</li>
+                            <li>Однокамерный стеклопакет с использованием триплекса</li>
+                            <li>Антирезонансный шумозащитный стеклопакет</li>
+                            <li>Двухкамерный энергосберегающий стеклопакет</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- .calc__params-row //-->
+            <div class="calc__params-row">
+                <p class="calc__input-label">Цвет</p>
+                <ul class="calc__dropdown">
+                    <li><span class="calc__dropdown-icon"><img alt="" src="../assets/dropdown-point-white.png"></span>Белый <span class="calc__dropdown-arrow"><img alt="" src="../assets/dropdown-arrow-down.png"></span>
+                        <ul>
+                            <li><span class="calc__dropdown-icon"><img alt="" src="../assets/dropdown-point-color.png"></span>C ламинацией</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- .calc__params-row //-->
+            <div class="calc__params-row">
+                <p class="calc__params-price">Цена* от — <span>50 190 ₽</span></p>
+            </div><!-- .calc__params-row //-->
+            <div class="calc__params-row">
+                <button class="calc__button">Добавить в корзину</button>
+            </div><!-- .calc__params-row //-->
+        </div><!-- .calc__body-r //-->
+    </div><!-- .calc__body //-->
+    <div class="calc__foot">
+        <p>* Цены в настоящем калькуляторе указана ориентировочная стоимость конструкций. Точный расчёт может быть проведен только с участием нашего инженера-замерщика.</p>
+        <p>* Цены на учитывают текущие скидки и акции. Звоните для полного расчёта в наш колл-центр!</p>
+    </div><!-- .calc__foot //-->
+</template>
+
+<script>
+export default {
+  name: 'Calculator'
+}
+</script>
+
+<style scoped>
+.calc__body { padding: 53px 28px 37px; display: flex; }
+.calc__body-l { padding-left: 56px; flex: 1; }
+.calc__body-r { padding: 0 20px; min-width: 225px; }
+
+.calc__window { margin-bottom: 25px; display: flex; flex-wrap: wrap; }
+.calc__window-left { display: flex; height: 100%; }
+.calc__window-img { width: 289px; height: 280px; display: flex; background: url(../assets/window-default.png) center center no-repeat; }
+.calc__window-col { height: 100%; width: 50%; display: flex; align-items: center; justify-content: center; position: relative; }
+.calc__window-col img { position: absolute; z-index: 0; }
+.calc__window-width { margin-top: 28px; width: 289px; position: relative; }
+.calc__window-width p { display: flex; align-items: center; justify-content: center; font-size: 12px; color: #898989; border-left: solid 1px #cccccc; border-right: solid 1px #cccccc; position: relative; }
+.calc__window-width p span { padding: 0 5px; display: flex; background: #f3f3f3; z-index: 10; }
+.calc__window-width p:after { top: 50%; left: 0; width: 100%; position: absolute; content: ''; border-top: 1px solid #ccc; z-index: 0; }
+
+.calc__window-height { margin-left: 28px; height: 280px; position: relative; }
+.calc__window-height p { writing-mode: vertical-lr; display: flex; width: 14px; height: 100%; align-items: center; justify-content: center; font-size: 12px; color: #898989; border-top: solid 1px #cccccc; border-bottom: solid 1px #cccccc; position: relative; line-height: 14px; }
+.calc__window-height p span { padding: 5px; display: flex; background: #f3f3f3; z-index: 10; align-items: center; justify-content: center; }
+.calc__window-height p:after { top: 0; left: 50%; height: 100%; position: absolute; content: ''; width: 1px; background-color: #ccc; z-index: 0; }
+
+.calc__window-button { border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; cursor: pointer; background-color: #e6e6e6; font-size: 30px; font-weight: 700; color: #fff; z-index: 10; }
+
+.calc__params-mosquito { display: flex; font-size: 13px; color: #707070; align-items: center; }
+
+.calc__title { margin: 0 0 32px 0; padding: 0; font-size: 20px; font-weight: 700; line-height: 24px; color: #fe5c26; }
+.calc__params-row { margin-bottom: 20px; display: flex; flex: 1; flex-wrap: wrap; align-items: center; }
+.calc__params-col { margin: 0 8px; flex-direction: column; flex: 1 1 auto; }
+.calc__params-col:first-child { margin-left: 0; }
+.calc__params-col:last-child { margin-right: 0; }
+
+.calc__dropdown { display: flex; width: 100%; position: relative; }
+.calc__dropdown-short { margin-left: 14px; max-width: 204px; }
+.calc__dropdown li { padding: 10px 20px; display: flex; flex: 1; font-size: 14px; background-color: #fff; color: #707070; cursor: pointer; align-items: center; transition: background-color .5s, color .5s; max-height: 36px; position: relative; }
+.calc__dropdown li span { display: flex; align-items: center; }
+.calc__dropdown li span.calc__dropdown-icon { margin-right: 14px; }
+.calc__dropdown li span.calc__dropdown-arrow { margin-left: auto; }
+.calc__dropdown ul { top: 100%; left: 0; width: 100%; display: none; position: absolute; flex-direction: column; }
+.calc__dropdown li:hover > ul { display: flex; box-shadow: 0px 15px 15px rgba(125, 125, 125, .1); position: absolute; z-index: 999999999; border-top: solid 1px #ccc; }
+.calc__dropdown ul li:hover { background-color: #f9f9fa; color: #fe5c26; }
+
+
+.checkbox { margin-left: 58px; padding-left: 28px; display: flex; position: relative; cursor: pointer; user-select: none; }
+.checkbox input { position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0; }
+.checkmark { top: -2px; left: 0; height: 16px; width: 16px; position: absolute; border: solid 2px #e6e6e6; background-color: #fff; transition: background-color .5s; }
+.checkbox:hover input ~ .checkmark { background-color: #f3f3f3; }
+.checkbox input:checked ~ .checkmark { background-color: #fe5c26; }
+.checkbox input:checked ~ .checkmark:after { display: flex; }
+
+.calc__params-price { font-size: 14px; color: #000; }
+.calc__params-price span { font-size: 26px; color: #fe5c26; font-weight: 700; }
+
+.calc__button { padding: 15px 0; display: flex; flex: 1; border: solid 1px #fe5c26; background-color: transparent; color: #fe5c26; font-weight: 700; text-transform: uppercase; font-size: 15px; justify-content: center; font-family: 'Roboto', sans-serif; cursor: pointer; transition: background-color .5s, color .5s; }
+.calc__button:hover { background-color: #fe5c26; color: #fff; }
+
+.calc__input-label { display: block; width: 100%; padding-bottom: 10px; color: #19191a; font-size: 14px; }
+.calc__input { padding: 10px 20px; display: flex; width: 50px; color: #000; font-size: 14px; background-color: #fff; border: solid 2px transparent; }
+.calc__input:focus { border: solid 2px #fe5c26; }
+
+/* Footer */
+.calc__foot { padding: 0 28px; }
+.calc__foot p { font-size: 13px; line-height: 18px; color: #707070; }
+
+
+@media screen and (max-width: 840px){
+.calc__body-l { padding-left: 28px; }
+}
+
+@media screen and (max-width: 780px){
+.calc__body { flex-wrap: wrap; }
+.calc__window-height { margin-right: 25px; }
+.calc__body-l { min-width: 100%; padding-left: 0px; flex: 0; }
+.calc__body-r { margin-top: 28px; padding: 0; min-width: 100%; flex: 0; }
+}
+@media screen and (max-width: 600px){
+.calc__window-height { margin-right: 0; }
+}
+@media screen and (max-width: 490px){
+body { padding: 15px; }
+}
+@media screen and (max-width: 440px){
+body { padding: 5px; }
+.calc__body { padding: 15px; }
+}
+</style>
