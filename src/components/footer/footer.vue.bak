@@ -1,0 +1,12 @@
+﻿<template>
+    <div class="calc__foot" v-if="states.text.footer">
+        <p v-for="paragraph in states.text.footer" :key="paragraph.id">{{ paragraph }}</p>
+    </div>
+<template>
+
+<script>
+export default {
+    name : 'Footer',
+    props : ['Footer']
+}
+</script>
