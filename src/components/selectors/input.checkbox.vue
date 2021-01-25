@@ -1,5 +1,5 @@
 ﻿<template>
-    <label class="checkbox">Добавить москитную сетку
+    <label class="checkbox" v-on:click="changePrice()">Добавить москитную сетку {{ price }}
         <input type="checkbox" />
         <span class="checkmark"></span>
     </label>
@@ -7,7 +7,14 @@
 
 <script>
 export default {
-    name : 'Checkbox'
+    name : 'Checkbox',
+    props : ['price'],
+    methods: {
+        changePrice(){
+            this.$parent.price = this.price + 5000;
+            console.log(this.price);
+        }
+    }
 }
 </script>
 

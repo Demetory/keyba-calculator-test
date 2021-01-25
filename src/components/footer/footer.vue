@@ -1,17 +1,23 @@
 ﻿<template>
-    <div class="calc__foot" v-if="data">
+    <div class="footer" v-if="data">
         <p v-for="paragraph in data" :key="paragraph.id">{{ paragraph }}</p>
     </div>
 </template>
 
 <script>
 export default {
-    name : 'Footer',
-    props : ['data']
+    name : 'form_footer',
+    props : {
+        data : {
+            type: Array,
+            required: true,
+            default: null
+        }
+    }
 }
 </script>
 
 <style scoped>
-.calc__foot { padding: 0 28px; }
-.calc__foot p { font-size: 13px; line-height: 18px; color: #707070; }
+.footer { padding: 0 28px; }
+.footer p { font-size: 13px; line-height: 18px; color: #707070; }
 </style>

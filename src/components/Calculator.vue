@@ -1,102 +1,68 @@
 <template>
+<div id="calculator">
     <div class="calc__body">
         <div class="calc__body-l">
-            <Window />
-            <div class="calc__params">
-                <div class="calc__params-row">
-                    <Button_Window :label="1" />
-                    <Dropdown :className="'calc__dropdown-short'" />
-                </div><!-- .calc__params-row //-->
-                <div class="calc__params-row">
-                    <Button_Window :label="2" />
-                    <Dropdown :className="'calc__dropdown-short'" />
-                </div><!-- .calc__params-row //-->
-                <div class="calc__params-row">
-                    <p class="calc__params-mosquito">
-                        <Checkbox />
-                    </p>
-                </div><!-- .calc__params-row //-->
-            </div><!-- .calc__params //-->
-        </div><!-- .calc__body-l //-->
+            <Window :window_width="get_width()" :window_height="get_height()" />
+            <form_window :inputs="form_window_inputs" v-model="formData" />
+        </div>
         <div class="calc__body-r">
-            <h2 class="calc__title">{{ states.text.title }}</h2>
-            <div class="calc__params-row">
-                <div class="calc__params-col">
-                    <Text :data="['param-width', 'Ширина']" />
-                </div>
-                <div class="calc__params-col">
-                    <Text :data="['param-height', 'Длина']"/>
-                </div>
-            </div><!-- .calc__params-row //-->
-            <div class="calc__params-row">
-                <Dropdown :label="'ПВХ-профиль'" />
-            </div><!-- .calc__params-row //-->
-            <div class="calc__params-row">
-                <Dropdown :label="'Стеклопакет'" />
-            </div><!-- .calc__params-row //-->
-            <div class="calc__params-row">
-                <Dropdown :label="'Цвет'" />
-            </div><!-- .calc__params-row //-->
-            <div class="calc__params-row">
-                <p class="calc__params-price">{{ states.text.price }} <span>50 190 ₽</span></p>
-            </div><!-- .calc__params-row //-->
-            <div class="calc__params-row">
-                <Button_Cart :label="states.text.cart" />
-            </div><!-- .calc__params-row //-->
-        </div><!-- .calc__body-r //-->
-    </div><!-- .calc__body //-->
-    <Footer :data="states.text.footer" />
+            <h2 class="form__title">{{ states.form_params.str_title }}</h2>
+            <form_params :inputs="form_params_inputs" v-model="formData" />
+            <form_price :label="states.form_params.str_price" :price="formData.price" />
+            <cart_button :label="states.form_params.str_cart" :cart="formData" />
+        </div>
+    </div>
+    <form_footer :data="states.form_params.arr_footer" />
+</div>
 </template>
 
 <script>
 import states from '@/assets/data/options.json'
 
-import Footer from '@/components/footer/footer.vue'
-import Button_Cart from '@/components/buttons/cart.button.vue'
-import Button_Window from '@/components/buttons/window.button.vue'
+import form_window from '@/components/forms/form_window.vue'
+import form_params from '@/components/forms/form_params.vue'
+import form_price from '@/components/forms/form_price.vue'
+import cart_button from '@/components/buttons/cart.button.vue'
+import form_footer from '@/components/footer/footer.vue'
+
 import Window from '@/components/window/window.vue'
-import Dropdown from '@/components/selectors/input.dropdown.vue'
-import Checkbox from '@/components/selectors/input.checkbox.vue'
-import Text from '@/components/selectors/input.text.vue'
 
 export default {
     name: 'Calculator',
-    components: { Dropdown, Checkbox, Text, Window, Button_Cart, Button_Window, Footer },
-    data() {
-        return { states }
-    },
-    computed: {
-        get_data(){
-            return states.params.map((selector) => {
-                return selector
-            })
+    components: { form_window, form_params, form_price, cart_button, form_footer, Window },
+    data: () => ({
+        states,
+        formData : { new_price: [], price : 0 },
+        form_params_inputs : {},
+        form_window_inputs : {},
+    }),
+    methods: {
+        get_width(){
+            if (this.formData.param_width){ return Number.parseInt(this.formData.param_width.value) }
+        },
+        get_height(){
+            if (this.formData.param_height){ return Number.parseInt(this.formData.param_height.value) }
         }
     },
-    methods : {
-
-    },
     mounted() {
-        console.log(states);
+        this.form_params_inputs = states.form_params.inputs.map((inputs) => { return inputs })
+        this.form_window_inputs = states.form_window.inputs.map((inputs) => { return inputs })
+
+        this.get_width();
+        this.get_height();
     }
 }
 </script>
 
 <style scoped>
+#calculator { margin: 0 auto; padding: 0 0 40px 0; max-width: 794px; display: flex; flex-direction: column; background-color: #f3f3f3; text-align: left; }
+
 .calc__body { padding: 53px 28px 37px; display: flex; }
 .calc__body-l { padding-left: 56px; flex: 1; }
 .calc__body-r { padding: 0 20px; min-width: 225px; }
 
-.calc__params-row { margin-bottom: 20px; display: flex; flex: 1; flex-wrap: wrap; align-items: center; }
-.calc__params-col { margin: 0 8px; flex-direction: column; flex: 1 1 auto; }
-.calc__params-col:first-child { margin-left: 0; }
-.calc__params-col:last-child { margin-right: 0; }
+.form__title { margin: 0 0 32px 0; padding: 0; font-size: 20px; font-weight: 700; line-height: 24px; color: #fe5c26; }
 
-.calc__title { margin: 0 0 32px 0; padding: 0; font-size: 20px; font-weight: 700; line-height: 24px; color: #fe5c26; }
-
-.calc__params-mosquito { display: flex; font-size: 13px; color: #707070; align-items: center; }
-
-.calc__params-price { font-size: 14px; color: #000; }
-.calc__params-price span { font-size: 26px; color: #fe5c26; font-weight: 700; }
 
 @media screen and (max-width: 840px){
     .calc__body-l { padding-left: 28px; }

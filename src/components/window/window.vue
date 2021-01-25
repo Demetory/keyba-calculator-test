@@ -9,8 +9,8 @@
                 <img alt="" src="@/assets/img/window-right-blind.png">
             </div>
         </div>
-        <div class="calc__window-height"><p><span>1750 мм</span></p></div>
-        <div class="calc__window-width"><p><span>1300 мм</span></p></div>
+        <div class="calc__window-height"><p><span>{{ window_height }} мм</span></p></div>
+        <div class="calc__window-width"><p><span>{{ window_width }} мм</span></p></div>
     </div>
 </template>
 
@@ -19,7 +19,20 @@ import Button_Window from '@/components/buttons/window.button.vue'
 
 export default {
     name : 'Window',
-    components: { Button_Window }
+    components: { Button_Window },
+    props : {
+        window_width: {
+            type: Number,
+            required: true,
+            default: 0
+        },
+        window_height: {
+            type: Number,
+            required: true,
+            default: 0
+        }
+    }
+
 }
 </script>
 

@@ -1,11 +1,9 @@
 ﻿<template>
     <p v-if="label" class="calc__input-label">{{ label }}</p>
     <ul :className="className + ' calc__dropdown'">
-        <li>Глухое <span class="calc__dropdown-arrow"><img alt="" src="@/assets/img/dropdown-arrow-down.png"></span>
-            <ul>
-                <li>Поворотное</li>
-                <li>Откидное</li>
-                <li>Поворотно-откидное</li>
+        <li>{{ data.options[0].label }} <span class="calc__dropdown-arrow"><img alt="" src="@/assets/img/dropdown-arrow-down.png"></span>
+            <ul v-for = "option in data.options" :key = "option.id">
+                <li data-price="{{ option.price }}" data-id="">{{ option.label }}</li>
             </ul>
         </li>
     </ul>
@@ -14,7 +12,7 @@
 <script>
 export default {
     name : 'Dropdown',
-    props : ['className', 'label']
+    props : ['data', 'label', 'className']
 }
 </script>
 
